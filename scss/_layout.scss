@@ -1,0 +1,176 @@
+/* 
+Layout Rules
+    CSS, by its very nature, is used to lay elements out on the page. However, there is a distinction between layouts dictating the major and minor components of a page. The minor components—such as a callout, or login form, or a navigation item—sit within the scope of major components such as a header or footer. I refer to the minor components as Modules and will dive into those in the next section. The major components are referred to as Layout styles.
+    Layout styles can also be divided into major and minor styles based on reuse. Major layout styles such as header and footer are traditionally styled using ID selectors but take the time to think about the elements that are common across all components of the page and use class selectors where appropriate.
+*/
+
+$color: #000;
+$background-color: #fff;
+$page-color: #e3e3e3;
+$link-color: #aaa;
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url(http://fonts.gstatic.com/s/oswald/v10/HqHm7BVC_nzzTui2lzQTDT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(http://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+abbr {
+    font-weight: 600;
+    color: $link-color;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $page-color;
+}
+
+body {
+    background-color: $page-color;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+    @media screen and (max-width: $tablet) {
+        padding:0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    border-bottom-width: 1px;
+    border-bottom-color: $link-color;
+    border-bottom-style: dotted;
+}
+
+header[role=banner] {
+    position: fixed;
+    top:0;
+    width: 100%; 
+    z-index: 100;
+    background-color: $background-color;
+    text-transform: uppercase;
+    line-height: 0.1;
+    padding-left:15px;
+    border-bottom-width: 1px;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-style: solid;
+    border-color: $color;
+}
+
+header[role=banner] h1 {
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    border-bottom-width: 0;
+}
+
+header[role=banner] h2 {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    margin-left:10px;
+    border-bottom-width: 0;
+}
+
+.summary {
+    margin-top:110px;
+}
+
+.sidebar {
+    color: $link-color;
+    background-color: $background-color;
+    position: absolute;
+    top: 100px;
+    border-bottom-left-radius: 12px;
+    right: 0;
+    //left: 0;
+    //bottom: 0;
+    width: 38.5%;
+    @media screen and (max-width: $tablet) {
+        position: static;
+        width: 100%;
+    }
+}
+
+.main {
+    background-color: $background-color;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: $color;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    color: $link-color;
+}
+
+
+.summary p:nth-child(1) {
+    text-transform: uppercase;
+    font-size: .8rem;
+    margin-bottom:0;
+}
+
+.summary p:nth-child(2) {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top:0;
+}
+
+.preamble {
+    width: 60%;
+    background-color: $background-color;
+    padding: $gutter;
+    box-sizing: border-box;
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+    }
+}
+
+.zen-resources {
+    margin-top: 0;
+}
+
+.design-archives{
+    margin-bottom: -15px;;
+}
+
+.benefits {
+    padding: 0 30px 0 30px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color;
+    border-radius: 12px;
+}
+
+.benefits h3 {
+    font-size:3rem;
+}
+
+.benefits p:nth-child(2){
+    font-size:2rem;
+}
